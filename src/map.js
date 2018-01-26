@@ -16,6 +16,7 @@ export default class extends React.Component {
 	componentDidUpdate(prevProps) {
 		if(prevProps.dealers !== this.props.dealers){
 			this.recenter()
+			this.activateDealer(false)
 		}
 	}
 

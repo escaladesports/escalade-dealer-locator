@@ -61,7 +61,6 @@ export default class extends React.Component {
 						background: #aaa;
 						position: absolute;
 						border-radius: 50%;
-						z-index: 100;
 					}
 
 					.escaDealersMarker:hover .escaDealerMarkerName{

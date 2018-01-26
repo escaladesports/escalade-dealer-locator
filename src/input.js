@@ -34,7 +34,7 @@ export default class extends React.Component {
 	render(){
 		return (
 			<div className='escaDealersInput'>
-				<span>Search within</span>
+				<span>Dealers within</span>
 				<input
 					className='escaDealersInputDistance'
 					ref={el => this.distanceEl = el}

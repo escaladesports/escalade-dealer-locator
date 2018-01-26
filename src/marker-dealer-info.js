@@ -37,13 +37,12 @@ export default class extends React.Component {
 				<style jsx='true'>{`
 					.escaDealerMarkerInfo{
 						display: none;
-					}
-					.escaDealerMarkerInfo{
 						white-space: nowrap;
 						padding: 13px 15px;
 						cursor: default;
 						transform: translate(-50%, -96%);
 						position: absolute;
+						z-index: 3;
 						left: 50%;
 						background-color: #000;
 						font-size: 1.2em;
