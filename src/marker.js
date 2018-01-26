@@ -6,13 +6,11 @@ export default class extends React.Component {
 	}
 	render(){
 		return (
-			<div className='escaDealersMarker'
-				lat={this.props.latitude}
-				lng={this.props.longitude}
-				>
+			<div className='escaDealersMarker'>
 				{this.props.name}
 				<style jsx='true'>{`
 					.escaDealersMarker{
+						user-select: none;
 						background: #000;
 						color: #fff;
 					}
