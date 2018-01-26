@@ -1,18 +1,37 @@
-# React Component Boilerplate
+# Escalade Dealer Locator
 
-A simple React boilerplate that outputs to ES5 and ES6.
+## With React
 
-## Getting started
+### Installation
+
+With Yarn:
 
 ```bash
-git clone git@github.com:escaladesports/react-component-boilerplate.git --depth=1 your-component
-cd your-component
-rm -rf .git
+yarn add escalade-dealer-locator
 ```
 
-Also make sure to edit the `package.json` file with a new name, version number, author, and anything else you might need.
+With npm:
 
-## Usage
+```bash
+npm install --save escalade-dealer-locator
+```
 
-- `yarn dev`: Runs a local dev server from the `dev` directory
-- `yarn analyze`: View bundle sizes
+### Usage
+
+```jsx
+import DealerLocator from 'escalade-dealer-locator'
+
+...
+
+<DealerLocator />
+```
+
+## With Anything Else
+
+```html
+<div data-esca-dealers-is-loading>Loading...</div>
+<div data-esca-dealers></div>
+
+<!-- Before your closing </body> tag -->
+<script src='https://escalade-dealer-locator.netlify.com/index.js' async></script>
+```
