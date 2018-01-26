@@ -1,11 +1,6 @@
 {
-  "name": "react-component-boilerplate",
-  "version": "2.1.1",
-  "keywords": [
-    "react",
-    "component",
-    "boilerplate"
-  ],
+  "name": "escalade-dealer-locator",
+  "version": "0.0.0",
   "main": "dist-es5/index.js",
   "browser": "dist-es5/index.js",
   "module": "dist-es6/index.js",
@@ -13,7 +8,7 @@
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/escaladesports/react-component-boilerplate.git"
+    "url": "https://github.com/escaladesports/escalade-dealer-locator.git"
   },
   "license": "MIT",
   "scripts": {
