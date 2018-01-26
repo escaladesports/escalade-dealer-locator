@@ -11,41 +11,40 @@ export default class extends React.Component {
 		}
 	}
 	render(){
+		let directionsLink = `${this.props.address} ${this.props.city}, ${this.props.state} ${this.props.zip}`
+		directionsLink = encodeURIComponent(urlAddress)
+		directionsLink = `https://www.google.com/maps?saddr&daddr=${urlAddress}`
 		return (
 			<div className={`escaDealersMarker ${this.props.activeDealer === this.props.id && 'escaDealersActiveMarker'}`}>
 				<div className='escaDealerMarkerPin' onClick={this.pinClick}></div>
 				<div className='escaDealerMarkerName'>{this.props.name}</div>
 				<div className='escaDealerMarkerInfo'>
-					<div className='escaDealerMarkerInfoName'>{this.props.name}</div>
-					<div className='escaDealerMarkerInfoAddress'>
-						{this.props.address}<br />
-						{this.props.city}, {this.props.state} {this.props.zip}
+					<div className='escaDealerMarkerInfoTop'>
+						<div className='escaDealerMarkerInfoName'>{this.props.name}</div>
+						<div className='escaDealerMarkerInfoAddress'>
+							{this.props.address}<br />
+							{this.props.city}, {this.props.state} {this.props.zip}
+						</div>
+						<div className='escaDealersMarkerInfoDirections'>
+							<a href={directionsLink}>Get Directions</a>
+						</div>
 					</div>
-					<div className='escaDealerMarkerInfoLink'>
-						<a href={this.props.web} target="_blank">Visit website</a>
-					</div>
-					<div className='escaDealerMarkerInfoEmail'>
-						<a href={'mailto:' + this.props.email}>{this.props.email}</a>
-					</div>
-					<div className='escaDealerMarkerInfoPhone'>
-						<a href={'tel:' + this.props.phone}>{this.props.phone}</a>
+					<div className='escaDealerMarkerInfoBottom'>
+						<div className='escaDealerMarkerInfoLink'>
+							<a href={this.props.web} target="_blank">Visit Website</a>
+						</div>
+						<div className='escaDealerMarkerInfoEmail'>
+							<a href={'mailto:' + this.props.email}>{this.props.email}</a>
+						</div>
+						<div className='escaDealerMarkerInfoPhone'>
+							<a href={'tel:' + this.props.phone}>{this.props.phone}</a>
+						</div>
 					</div>
 				</div>
 				<style jsx='true'>{`
 					.escaDealersMarker{
 						user-select: none;
 						color: #fff;
-					}
-					.escaDealersMarker:hover .escaDealerMarkerName{
-						visibility: visible;
-						opacity: 1;
-						transform: translate(-50%, 0);
-					}
-					.escaDealersActiveMarker .escaDealerMarkerName{
-						display: none;
-					}
-					.escaDealersActiveMarker .escaDealerMarkerInfo{
-						display: block;
 					}
 					.escaDealerMarkerInfo{
 						display: none;
@@ -91,14 +90,40 @@ export default class extends React.Component {
 						white-space: nowrap;
 						padding: 10px;
 						cursor: default;
-						transform: translate(-50%, -92%);
+						transform: translate(-50%, -96%);
 						background-color: #000;
-						padding:
+						font-size: 1.2em;
+						line-height: 1.4em;
 					}
 					.escaDealerMarkerInfo a{
 						color: #fff;
 						text-decoration-skip: ink;
 						text-decoration-skip-ink: auto;
+						margin-top: 2px;
+						display: inline-block;
+						text-decoration: none;
+					}
+					.escaDealerMarkerInfoName{
+						font-weight: bold;
+					}
+					.escaDealerMarkerInfoTop{
+						padding-bottom: 10px;
+						border-bottom: 1px solid #fff;
+					}
+					.escaDealerMarkerInfoBottom{
+						padding-top: 10px;
+					}
+
+					.escaDealersMarker:hover .escaDealerMarkerName{
+						visibility: visible;
+						opacity: 1;
+						transform: translate(-50%, 0);
+					}
+					.escaDealersActiveMarker .escaDealerMarkerName{
+						display: none;
+					}
+					.escaDealersActiveMarker .escaDealerMarkerInfo{
+						display: block;
 					}
 				`}</style>
 			</div>
