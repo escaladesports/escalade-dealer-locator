@@ -12,8 +12,8 @@ export default class extends React.Component {
 	}
 	render(){
 		let directionsLink = `${this.props.address} ${this.props.city}, ${this.props.state} ${this.props.zip}`
-		directionsLink = encodeURIComponent(urlAddress)
-		directionsLink = `https://www.google.com/maps?saddr&daddr=${urlAddress}`
+		directionsLink = encodeURIComponent(directionsLink)
+		directionsLink = `https://www.google.com/maps?saddr&daddr=${directionsLink}`
 		return (
 			<div className={`escaDealersMarker ${this.props.activeDealer === this.props.id && 'escaDealersActiveMarker'}`}>
 				<div className='escaDealerMarkerPin' onClick={this.pinClick}></div>
@@ -26,18 +26,18 @@ export default class extends React.Component {
 							{this.props.city}, {this.props.state} {this.props.zip}
 						</div>
 						<div className='escaDealersMarkerInfoDirections'>
-							<a href={directionsLink}>Get Directions</a>
+							<a href={directionsLink} target='_blank'>Get Directions</a>
 						</div>
 					</div>
 					<div className='escaDealerMarkerInfoBottom'>
 						<div className='escaDealerMarkerInfoLink'>
-							<a href={this.props.web} target="_blank">Visit Website</a>
+							<a href={this.props.web} target='_blank'>Visit Website</a>
 						</div>
 						<div className='escaDealerMarkerInfoEmail'>
-							<a href={'mailto:' + this.props.email}>{this.props.email}</a>
+							<a href={`mailto:${this.props.email}`}>{this.props.email}</a>
 						</div>
 						<div className='escaDealerMarkerInfoPhone'>
-							<a href={'tel:' + this.props.phone}>{this.props.phone}</a>
+							<a href={`tel:${this.props.phone}`}>{this.props.phone}</a>
 						</div>
 					</div>
 				</div>
