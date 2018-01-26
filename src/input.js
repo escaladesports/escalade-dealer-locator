@@ -34,6 +34,7 @@ export default class extends React.Component {
 						width: 100%;
 						font-size: 1em;
 						height: 30px;
+						background-color: rgba(255, 255, 255, .5);
 						&:active, &:focus{
 							border: 1px solid #000;
 						}

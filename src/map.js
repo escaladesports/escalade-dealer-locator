@@ -2,6 +2,7 @@ import React from 'react'
 import Map from 'google-map-react'
 
 import defaultMapOptions from './default-map-options'
+import Marker from './marker'
 
 export default class extends React.Component {
 	constructor(props){
@@ -23,8 +24,15 @@ export default class extends React.Component {
 						lat: 39,
 						lng: -95,
 					}}
-					defaultZoom={this.props.zoom || 3}
-				/>
+					defaultZoom={this.props.zoom || 3}>
+					{this.props.dealers.map((dealer, key) => {
+						return <Marker
+							lat={dealer.latitude}
+							lng={dealer.longitude}
+							{...dealer}
+							key={`dealerMarker${dealer.id}`} />
+					})}
+				</Map>
 				<style jsx='true'>{`
 					.escaDealersMap{
 						position: absolute;
