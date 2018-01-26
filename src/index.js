@@ -14,9 +14,10 @@ export default class extends React.Component {
 		}
 		this.getDealers = this.getDealers.bind(this)
 	}
-	async getDealers(zip){
+	async getDealers(zip, distance){
 		let data = await fetch({
-			zip: zip
+			zip: zip,
+			proximity: distance,
 		})
 		console.log(data)
 		if (data.results) {

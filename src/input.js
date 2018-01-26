@@ -10,14 +10,16 @@ export default class extends React.Component {
 		this.onChange = this.onChange.bind(this)
 		this.changeMiles = this.changeMiles.bind(this)
 	}
-	onChange(e){
-		if(this.props.onChange && validate(e.target.value)){
-			this.props.onChange(e.target.value)
+	onChange(){
+		let zip = this.zipEl.value
+		let distance = this.distanceEl.value
+		if(this.props.onChange && validate(zip) && distance){
+			this.props.onChange(zip, distance)
 		}
 	}
 	// Hack value since user loses control if value prop is set with React
 	changeMiles(e){
-		let val = e.target.value
+		let val = this.distanceEl.value
 		if(val < 1){
 			val = 1
 		}
@@ -27,6 +29,7 @@ export default class extends React.Component {
 		this.setState({
 			miles: val
 		})
+		this.onChange()
 	}
 	render(){
 		return (
@@ -34,6 +37,7 @@ export default class extends React.Component {
 				<span>Search within</span>
 				<input
 					className='escaDealersInputDistance'
+					ref={el => this.distanceEl = el}
 					type='text'
 					value={this.state.miles}
 					onChange={this.changeMiles}
@@ -43,6 +47,7 @@ export default class extends React.Component {
 				<span>miles of</span>
 				<input
 					className='escaDealersInputZip'
+					ref={el => this.zipEl = el}
 					type='text'
 					onChange={this.onChange}
 					placeholder='Zip Code' />
@@ -56,7 +61,7 @@ export default class extends React.Component {
 						left: 0;
 						top: 0;
 						background-color: rgba(0, 0, 0, .3);
-						padding: 20px;
+						padding: 10px 15px;
 					}
 					.escaDealersInputDistance, .escaDealersInputZip{
 						background: transparent;
@@ -73,7 +78,8 @@ export default class extends React.Component {
 						width: 35px;
 					}
 					.escaDealersInputZip{
-						width: 100px;
+						width: 80px;
+						margin-right: 0;
 					}
 					.escaDealersInputZip::-webkit-input-placeholder {
 						color: #ccc !important;

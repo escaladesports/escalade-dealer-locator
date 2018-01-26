@@ -11,6 +11,7 @@ export default class extends React.Component {
 		this.state = {}
 		this.createMapOptions = this.createMapOptions.bind(this)
 		this.recenter = this.recenter.bind(this)
+		this.activateDealer = this.activateDealer.bind(this)
 	}
 	componentDidUpdate(prevProps) {
 		if(prevProps.dealers !== this.props.dealers){
@@ -57,6 +58,11 @@ export default class extends React.Component {
 			zoom: zoom,
 		})
 	}
+	activateDealer(id){
+		this.setState({
+			activeDealer: id,
+		})
+	}
 	render(){
 		return (
 			<div className='escaDealersMap' ref={el => this.mapEl = el}>
@@ -74,6 +80,8 @@ export default class extends React.Component {
 						return <Marker
 							lat={dealer.latitude}
 							lng={dealer.longitude}
+							onClick={this.activateDealer}
+							activeDealer={this.state.activeDealer}
 							{...dealer}
 							key={`dealerMarker${dealer.id}`} />
 					})}
