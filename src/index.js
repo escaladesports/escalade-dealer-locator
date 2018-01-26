@@ -20,7 +20,7 @@ export default class extends React.Component {
 			proximity: distance,
 		})
 		console.log(data)
-		if (data.results) {
+		if (data && data.results && data.results.length) {
 			this.setState({
 				dealers: data.results
 			})

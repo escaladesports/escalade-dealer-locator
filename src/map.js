@@ -60,6 +60,9 @@ export default class extends React.Component {
 		})
 	}
 	activateDealer(id){
+		if(id === this.state.activeDealer){
+			id = false
+		}
 		this.setState({
 			activeDealer: id,
 		})
