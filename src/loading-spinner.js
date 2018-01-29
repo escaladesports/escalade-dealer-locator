@@ -9,7 +9,7 @@ export default class extends React.Component {
 				<div />
 				<div />
 				<div />
-				<style jsx='true'>{`
+				<style jsx>{`
 					.escaDealersLoad{
 						position: absolute;
 						top: 0;

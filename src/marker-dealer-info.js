@@ -44,7 +44,7 @@ export default class extends React.Component {
 					}
 				</div>
 				<div className='escaDealerMarkerInfoX' onClick={this.closeInfo}>×</div>
-				<style jsx='true'>{`
+				<style jsx>{`
 					.escaDealerMarkerInfo{
 						display: none;
 						white-space: nowrap;

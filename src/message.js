@@ -7,7 +7,7 @@ export default class extends React.Component {
 				<div className='escaDealersMessageInner'>
 					{this.props.children}
 				</div>
-				<style jsx='true'>{`
+				<style jsx>{`
 					.escaDealersMessage{
 						position: absolute;
 						top: 0;

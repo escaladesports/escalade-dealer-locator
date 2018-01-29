@@ -21,7 +21,7 @@ export default class extends React.Component {
 				<div className='escaDealerMarkerPin' onClick={this.pinClick}></div>
 				<div className='escaDealerMarkerName'>{this.props.name}</div>
 				<DealerInfo {...this.props} />
-				<style jsx='true'>{`
+				<style jsx>{`
 					.escaDealersMarker{
 						user-select: none;
 						color: #fff;

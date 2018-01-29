@@ -1,6 +1,10 @@
 import React from 'react'
 import { validate } from 'zippo'
 
+function selectInput(e){
+	e.target.select()
+}
+
 export default class extends React.Component {
 	constructor(props){
 		super(props)
@@ -41,6 +45,7 @@ export default class extends React.Component {
 					type='text'
 					value={this.state.miles}
 					onChange={this.changeMiles}
+					onClick={selectInput}
 					min='1'
 					step='1'
 					max='100' />
@@ -50,8 +55,10 @@ export default class extends React.Component {
 					ref={el => this.zipEl = el}
 					type='text'
 					onChange={this.onChange}
+					onClick={selectInput}
 					placeholder='Zip Code' />
-				<style jsx='true'>{`
+
+				<style jsx>{`
 					.escaDealersInput{
 						text-transform: uppercase;
 						color: #fff;
