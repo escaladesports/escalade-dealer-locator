@@ -87,21 +87,19 @@ export default class extends React.Component {
 					.escaDealersInputZip{
 						width: 80px;
 						margin-right: 0;
-					}
-					.escaDealersInputZip::-webkit-input-placeholder {
-						color: #ccc !important;
-					}
 
-					.escaDealersInputZip:-moz-placeholder {
-						color: #ccc !important;
-					}
-
-					.escaDealersInputZip::-moz-placeholder {
-						color: #ccc !important;
-					}
-
-					.escaDealersInputZip:-ms-input-placeholder {
-						color: #ccc !important;
+						&::-webkit-input-placeholder{
+							color: #ccc;
+						}
+						&::-moz-placeholder {
+							color: #ccc;
+						}
+						&:-ms-input-placeholder {
+							color: #ccc;
+						}
+						&:-moz-placeholder {
+							color: #ccc;
+						}
 					}
 				`}</style>
 			</div>

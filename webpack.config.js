@@ -20,6 +20,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 module.exports = {
+	devtool: 'eval',
 	entry: [
 		'./src/inject.js'
 	],
