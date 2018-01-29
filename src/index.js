@@ -27,6 +27,11 @@ export default class extends React.Component {
 				dealers: data.results,
 			})
 		}
+		else{
+			this.setState({
+				dealers: []
+			})
+		}
 		this.setState({ loading: false })
 	}
 	render(){

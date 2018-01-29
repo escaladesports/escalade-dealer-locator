@@ -32,30 +32,58 @@ export default class extends React.Component {
 		}
 	}
 	recenter(){
-		console.log('Recentering dealer map...')
-		const bounds = new google.maps.LatLngBounds()
-		this.props.dealers.forEach(dealer => {
-			bounds.extend(new google.maps.LatLng(dealer.latitude, dealer.longitude))
-		})
-		const newBounds = {
-			ne: {
-				lat: bounds.getNorthEast().lat(),
-				lng: bounds.getNorthEast().lng()
-			},
-			sw: {
-				lat: bounds.getSouthWest().lat(),
-				lng: bounds.getSouthWest().lng()
-			},
+
+		if (this.props.dealers && this.props.dealers.length) {
+			// If multiple dealers
+			if (this.props.dealers.length > 1) {
+				console.log(this.props.dealers)
+				console.log('Recentering dealer map...')
+				const bounds = new google.maps.LatLngBounds()
+				this.props.dealers.forEach(dealer => {
+					bounds.extend(new google.maps.LatLng(dealer.latitude, dealer.longitude))
+				})
+				const newBounds = {
+					ne: {
+						lat: bounds.getNorthEast().lat(),
+						lng: bounds.getNorthEast().lng()
+					},
+					sw: {
+						lat: bounds.getSouthWest().lat(),
+						lng: bounds.getSouthWest().lng()
+					},
+				}
+				const size = {
+					width: this.mapEl.offsetWidth,
+					height: this.mapEl.offsetHeight,
+				}
+				const { center, zoom } = fitBounds(newBounds, size)
+				this.setState({
+					center: center,
+					zoom: zoom - 1,
+				})
+			}
+			// Center on single dealer
+			else {
+				this.setState({
+					center: {
+						lat: dealer.latitude,
+						lng: dealer.longitude,
+					},
+					zoom: 10,
+				})
+			}
 		}
-		const size = {
-			width: this.mapEl.offsetWidth,
-			height: this.mapEl.offsetHeight,
+		// If no dealers
+		else{
+			console.log('Resetting map location...')
+			this.setState({
+				center: {
+					lat: 39,
+					lng: -95,
+				},
+				zoom: 3,
+			})
 		}
-		const { center, zoom } = fitBounds(newBounds, size)
-		this.setState({
-			center: center,
-			zoom: zoom - 1,
-		})
 	}
 	activateDealer(id){
 		if(id === this.state.activeDealer){
