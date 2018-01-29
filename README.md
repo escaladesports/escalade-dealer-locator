@@ -29,7 +29,7 @@ import DealerLocator from 'escalade-dealer-locator'
 ## With Anything Else
 
 ```html
-<div data-esca-dealers-is-loading>Loading...</div>
+<div data-esca-dealers-loading>Loading...</div>
 <div data-esca-dealers></div>
 
 <!-- Before your closing </body> tag -->
