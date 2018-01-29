@@ -1,6 +1,15 @@
 import React from 'react'
 
 export default class extends React.Component {
+	constructor(props){
+		super(props)
+		this.closeInfo = this.closeInfo.bind(this)
+	}
+	closeInfo(){
+		if (this.props.setActive){
+			this.props.setActive(false)
+		}
+	}
 	render(){
 		let directionsLink = `${this.props.address} ${this.props.city}, ${this.props.state} ${this.props.zip}`
 		directionsLink = encodeURIComponent(directionsLink)
@@ -34,11 +43,12 @@ export default class extends React.Component {
 						</div>
 					}
 				</div>
+				<div className='escaDealerMarkerInfoX' onClick={this.closeInfo}>×</div>
 				<style jsx='true'>{`
 					.escaDealerMarkerInfo{
 						display: none;
 						white-space: nowrap;
-						padding: 13px 15px;
+						padding: 13px 40px 13px 15px;
 						cursor: default;
 						transform: translate(-50%, -96%);
 						position: absolute;
@@ -68,6 +78,13 @@ export default class extends React.Component {
 					}
 					.escaDealersMarkerInfoDirections{
 						margin-top: 5px;
+					}
+					.escaDealerMarkerInfoX{
+						font-size: 1.7em;
+						position: absolute;
+						top: 7px;
+						right: 10px;
+						cursor: pointer;
 					}
 
 					.escaDealersActiveMarker{

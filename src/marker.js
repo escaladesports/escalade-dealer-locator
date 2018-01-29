@@ -8,8 +8,8 @@ export default class extends React.Component {
 		this.pinClick = this.pinClick.bind(this)
 	}
 	pinClick(){
-		if(this.props.onClick){
-			this.props.onClick(this.props.id)
+		if(this.props.setActive){
+			this.props.setActive(this.props.id)
 		}
 	}
 	render(){
@@ -36,6 +36,7 @@ export default class extends React.Component {
 						top: -37px;
 						transform: translate(-50%, 10px);
 						white-space: nowrap;
+						color: #000;
 					}
 					.escaDealerMarkerPin{
 						cursor: pointer;
@@ -58,7 +59,7 @@ export default class extends React.Component {
 						width: 14px;
 						height: 14px;
 						margin: 8px 0 0 8px;
-						background: #aaa;
+						background: #fff;
 						position: absolute;
 						border-radius: 50%;
 					}

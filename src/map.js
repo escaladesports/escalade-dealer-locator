@@ -85,7 +85,7 @@ export default class extends React.Component {
 						return <Marker
 							lat={dealer.latitude}
 							lng={dealer.longitude}
-							onClick={this.activateDealer}
+							setActive={this.activateDealer}
 							activeDealer={this.state.activeDealer}
 							{...dealer}
 							key={`dealerMarker${dealer.id}`} />
