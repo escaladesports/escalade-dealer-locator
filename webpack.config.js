@@ -9,14 +9,17 @@ if (process.env.ANALYZE) {
 		openAnalyzer: true
 	}))
 }
-else{
+else if (process.env.NODE_ENV !== 'production'){
 	plugins.push(new webpack.HotModuleReplacementPlugin())
 }
-
-if(process.env.NODE_ENV === 'production'){
-	new webpack.DefinePlugin({
-		'process.env.NODE_ENV': 'production'
-	})
+else{
+	console.log('Building in production...')
+	plugins.push(
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('production')
+		}),
+		new webpack.optimize.UglifyJsPlugin()
+	)
 }
 
 module.exports = {

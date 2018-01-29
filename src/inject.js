@@ -29,4 +29,4 @@ class EscaDealerLocator{
 	}
 }
 
-window.EscaDealerLocator = EscaDealerLocator
+export default EscaDealerLocator
