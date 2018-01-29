@@ -7,35 +7,37 @@ export default class extends React.Component {
 		return (
 			<div className='escaDealersLoadSpin'>
 				<div />
-				<div />
-				<div />
 				<style jsx>{`
 					.escaDealersLoadSpin{
-						div{
+						&:before, &:after{
+							content: '';
+						}
+						div, &:before, &:after{
 							width: 18px;
 							height: 18px;
 							background-color: #fff;
 							border-radius: 100%;
 							display: inline-block;
 							margin-right: 7px;
-							&:nth-of-type(1){
-								animation: bouncedelay 1.4s infinite ease-in-out both;
-								animation-delay: -0.32s;
-							}
-							&:nth-of-type(2){
-								animation: bouncedelay 1.4s infinite ease-in-out both;
-								animation-delay: -0.16s;
-							}
-							&:nth-of-type(3){
-								animation: bouncedelay 1.4s infinite ease-in-out both;
-								margin-right: 0;
-							}
+						}
+						&:before{
+							animation: bouncedelay 1.4s infinite ease-in-out both;
+							animation-delay: -0.32s;
+						}
+						div{
+							animation: bouncedelay 1.4s infinite ease-in-out both;
+							animation-delay: -0.16s;
+						}
+						&:after{
+							animation: bouncedelay 1.4s infinite ease-in-out both;
+							margin-right: 0;
 						}
 					}
 					@keyframes bouncedelay {
 						0%, 80%, 100% {
 							transform: scale(0);
-						} 40% {
+						}
+						40% {
 							transform: scale(1.0);
 						}
 					}

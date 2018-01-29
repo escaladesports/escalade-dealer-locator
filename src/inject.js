@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Map from './index'
+import DealerLocator from './index'
 
 class EscaDealerLocator{
 	constructor(options = {}){
@@ -16,7 +16,7 @@ class EscaDealerLocator{
 		for (let i = mapEls.length; i--;) {
 			let el = mapEls[i]
 			el.dataset.escaProcessed = true
-			render(<Map brand={this.options.brand} />, el)
+			render(<DealerLocator brand={this.options.brand} />, el)
 		}
 
 		const loadingEls = document.querySelectorAll('[data-esca-dealers-loading]:not([data-esca-processed])')
