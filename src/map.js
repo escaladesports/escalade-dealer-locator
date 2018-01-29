@@ -51,13 +51,10 @@ export default class extends React.Component {
 			width: this.mapEl.offsetWidth,
 			height: this.mapEl.offsetHeight,
 		}
-		console.log('SIZE:', size)
 		const { center, zoom } = fitBounds(newBounds, size)
-		console.log('CENTER:', center)
-		console.log('ZOOM:', zoom)
 		this.setState({
 			center: center,
-			zoom: zoom,
+			zoom: zoom - 1,
 		})
 	}
 	activateDealer(id){
