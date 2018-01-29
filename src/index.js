@@ -5,6 +5,9 @@ import Loading from './loading-spinner'
 import Map from './map'
 import Input from './input'
 import fetch from './fetch'
+import Message from './message'
+
+let reqId = 0
 
 export default class extends React.Component {
 	constructor(props){
@@ -14,32 +17,38 @@ export default class extends React.Component {
 		}
 		this.getDealers = this.getDealers.bind(this)
 	}
-	async getDealers(zip, distance){
-		this.setState({ loading: true })
+	async getDealers(zip, distance) {
+		reqId++
+		let curReqId = reqId
+		this.setState({
+			message: <Loading />,
+		})
 		console.log(`Fetching data for zip ${zip} within ${distance}...`)
 		let data = await fetch({
 			zip: zip,
 			proximity: distance,
 		})
 		console.log('Dealer results:', data)
+		if(curReqId !== reqId) return
 		if (data && data.results && data.results.length) {
 			this.setState({
 				dealers: data.results,
+				message: false,
 			})
 		}
 		else{
 			this.setState({
-				dealers: []
+				dealers: [],
+				message: 'No dealers found',
 			})
 		}
-		this.setState({ loading: false })
 	}
 	render(){
 		return (
 			<div className='escaDealers'>
 				<Map dealers={this.state.dealers} />
-				{this.state.loading &&
-					<Loading />
+				{this.state.message &&
+					<Message>{this.state.message}</Message>
 				}
 				<Input onChange={this.getDealers} />
 				<style jsx='true'>{`

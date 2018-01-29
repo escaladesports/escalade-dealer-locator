@@ -1,14 +1,14 @@
 import React from 'react'
 
+import Message from './message'
+
 export default class extends React.Component {
 	render(){
 		return (
-			<div className='escaDealersLoad'>
-				<div className='escaDealersLoadSpin'>
-					<div />
-					<div />
-					<div />
-				</div>
+			<div className='escaDealersLoadSpin'>
+				<div />
+				<div />
+				<div />
 				<style jsx='true'>{`
 					.escaDealersLoad{
 						position: absolute;
@@ -17,12 +17,6 @@ export default class extends React.Component {
 						bottom: 0;
 						left: 0;
 						background: rgba(0, 0, 0, .5);
-					}
-					.escaDealersLoadSpin{
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
 					}
 					.escaDealersLoadSpin div{
 						width: 18px;
