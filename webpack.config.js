@@ -20,9 +20,8 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 module.exports = {
-	devtool: 'eval',
 	entry: [
-		'./dev/dev.js'
+		'./src/inject.js'
 	],
 	output: {
 		path: path.join(__dirname, 'dist'),

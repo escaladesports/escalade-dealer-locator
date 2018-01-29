@@ -57,14 +57,14 @@ export default class extends React.Component {
 						background-color: #000;
 						font-size: 1.2em;
 						line-height: 1.4em;
-					}
-					.escaDealerMarkerInfo a{
-						color: #fff;
-						text-decoration-skip: ink;
-						text-decoration-skip-ink: auto;
-						margin-top: 2px;
-						display: inline-block;
-						text-decoration: none;
+						a{
+							color: #fff;
+							text-decoration-skip: ink;
+							text-decoration-skip-ink: auto;
+							margin-top: 2px;
+							display: inline-block;
+							text-decoration: none;
+						}
 					}
 					.escaDealerMarkerInfoName{
 						font-weight: bold;

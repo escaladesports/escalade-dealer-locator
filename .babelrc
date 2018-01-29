@@ -11,7 +11,9 @@
 		}
 	},
 	"plugins": [
-		"styled-jsx/babel",
+		["styled-jsx/babel", {
+			"plugins": ["styled-jsx-plugin-postcss"]
+		}],
 		["transform-react-remove-prop-types", {
 			"mode": "wrap"
 		}]

@@ -25,6 +25,7 @@ export default class extends React.Component {
 		})
 		console.log(`Fetching data for zip ${zip} within ${distance}...`)
 		let data = await fetch({
+			brand: this.props.brand,
 			zip: zip,
 			proximity: distance,
 		})

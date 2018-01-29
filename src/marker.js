@@ -26,6 +26,13 @@ export default class extends React.Component {
 						user-select: none;
 						color: #fff;
 						width: auto;
+						&:hover{
+							.escaDealerMarkerName{
+								visibility: visible;
+								opacity: 1;
+								transform: translate(-50%, 0);
+							}
+						}
 					}
 					.escaDealerMarkerName{
 						transition: visibility .3s, opacity .3s, transform .3s;
@@ -52,25 +59,22 @@ export default class extends React.Component {
 						animation-name: bounce;
 						animation-fill-mode: both;
 						animation-duration: 1s;
-					}
-					.escaDealerMarkerPin:after{
-						content: '';
-						display: block;
-						width: 14px;
-						height: 14px;
-						margin: 8px 0 0 8px;
-						background: #fff;
-						position: absolute;
-						border-radius: 50%;
+						&:after{
+							content: '';
+							display: block;
+							width: 14px;
+							height: 14px;
+							margin: 8px 0 0 8px;
+							background: #fff;
+							position: absolute;
+							border-radius: 50%;
+						}
 					}
 
-					.escaDealersMarker:hover .escaDealerMarkerName{
-						visibility: visible;
-						opacity: 1;
-						transform: translate(-50%, 0);
-					}
-					.escaDealersActiveMarker .escaDealerMarkerName{
-						display: none;
+					.escaDealersActiveMarker{
+						.escaDealerMarkerName{
+							display: none;
+						}
 					}
 				`}</style>
 			</div>
