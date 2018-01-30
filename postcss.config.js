@@ -1,4 +1,5 @@
 module.exports = {
+	from: false,
 	plugins: {
 		'postcss-cssnext': {},
 		'postcss-nested': {},
