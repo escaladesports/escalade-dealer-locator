@@ -116,7 +116,7 @@ export default class extends React.Component {
 							key={`dealerMarker${dealer.id}`} />
 					})}
 				</Map>
-				<style jsx>{`
+				<style jsx global>{`
 					.escaDealersMap{
 						position: absolute;
 						top: 0;

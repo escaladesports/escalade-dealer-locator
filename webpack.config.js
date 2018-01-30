@@ -1,29 +1,35 @@
 const path = require('path')
 const webpack = require('webpack')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+const env = process.env.NODE_ENV
 const plugins = []
-if (process.env.ANALYZE) {
+let devtool = false
+
+console.log(`Running webpack in ${env} environment...`)
+
+if (env === 'production' || env === 'analyze') {
+	plugins.push(
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('production')
+		}),
+		new UglifyJsPlugin(),
+	)
+}
+if (env === 'development'){
+	plugins.push(new webpack.HotModuleReplacementPlugin())
+	devtool = 'eval'
+}
+if (env === 'analyze') {
 	plugins.push(new BundleAnalyzerPlugin({
 		analyzerMode: 'server',
 		openAnalyzer: true
 	}))
 }
-else if (process.env.NODE_ENV !== 'production'){
-	plugins.push(new webpack.HotModuleReplacementPlugin())
-}
-else{
-	console.log('Building in production...')
-	plugins.push(
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('production')
-		}),
-		new webpack.optimize.UglifyJsPlugin()
-	)
-}
 
 module.exports = {
-	devtool: 'eval',
+	devtool: devtool,
 	entry: [
 		'./src/inject.js'
 	],
@@ -32,7 +38,6 @@ module.exports = {
 		filename: 'index.js',
 		publicPath: '/dev/'
 	},
-	plugins: plugins,
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
@@ -44,5 +49,6 @@ module.exports = {
 			}],
 			include: path.join(__dirname, '/')
 		}]
-	}
+	},
+	plugins: plugins,
 }

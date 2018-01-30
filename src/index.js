@@ -52,7 +52,7 @@ export default class extends React.Component {
 					<Message>{this.state.message}</Message>
 				}
 				<Input onChange={this.getDealers} />
-				<style jsx>{`
+				<style jsx global>{`
 					.escaDealers{
 						font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 						position: relative;

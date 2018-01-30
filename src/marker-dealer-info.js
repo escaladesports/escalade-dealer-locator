@@ -43,7 +43,7 @@ export default class extends React.Component {
 						</div>
 					}
 				</div>
-				<div className='escaDealerMarkerInfoX' onClick={this.closeInfo}>×</div>
+				<div className='escaDealerMarkerInfoX' onClick={this.closeInfo}></div>
 				<style jsx>{`
 					.escaDealerMarkerInfo{
 						display: none;
@@ -82,9 +82,27 @@ export default class extends React.Component {
 					.escaDealerMarkerInfoX{
 						font-size: 1.7em;
 						position: absolute;
-						top: 7px;
+						top: 9px;
 						right: 10px;
 						cursor: pointer;
+						width: 20px;
+						height: 20px;
+						&:before, &:after{
+							content: '';
+							display: inline-block;
+							position: absolute;
+							width: 3px;
+							height: 17px;
+							background: #fff;
+							left: 50%;
+
+						}
+						&:before{
+							transform: rotate(45deg);
+						}
+						&:after{
+							transform: rotate(-45deg);
+						}
 					}
 
 					.escaDealersActiveMarker{

@@ -58,7 +58,7 @@ export default class extends React.Component {
 					onClick={selectInput}
 					placeholder='Zip Code' />
 
-				<style jsx>{`
+				<style jsx global>{`
 					.escaDealersInput{
 						text-transform: uppercase;
 						color: #fff;

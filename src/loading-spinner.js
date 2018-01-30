@@ -7,7 +7,7 @@ export default class extends React.Component {
 		return (
 			<div className='escaDealersLoadSpin'>
 				<div />
-				<style jsx>{`
+				<style jsx global>{`
 					.escaDealersLoadSpin{
 						&:before, &:after{
 							content: '';
