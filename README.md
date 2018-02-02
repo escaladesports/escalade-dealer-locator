@@ -1,5 +1,7 @@
 # Escalade Dealer Locator
 
+Display a Google map with Escalade dealers via React or as an injectable web component.
+
 ## With React
 
 ### Installation
