@@ -12,13 +12,13 @@
   "scripts": {
     "analyze": "esca-scripts analyze --input './src/inject.js' --react --browser",
     "build": "run-p build:main build:browser",
-    "build:main": "esca-scripts build --input './src/index.js' --output './dist/index.js' --react",
+    "build:main": "esca-scripts build --input './src/index.js' --output './dist/index.js' --react --component --minify false",
     "build:browser": "esca-scripts build --input './src/inject.js' --output './dist-browser/index.js' --react --browser",
     "dev": "esca-scripts dev ---input './src/inject.js, ./dev/index.html' --browser --react",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "esca-scripts": "^0.9.2",
+    "esca-scripts": "^0.9.4",
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
