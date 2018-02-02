@@ -3,9 +3,10 @@
 	<body>
 		<div data-esca-dealers-loading>Loading...</div>
 		<div data-esca-dealers></div>
-		<script src="index.js"></script>
 		<script>
-			new EscaDealerLocator({
-				brand: 'goalrilla'
-			})
+			setTimeout(() => {
+				new EscaDealerLocator({
+					brand: 'goalrilla'
+				})
+			}, 100)
 		</script>
