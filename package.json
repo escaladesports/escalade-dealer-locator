@@ -1,6 +1,6 @@
 {
   "name": "escalade-dealer-locator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "browser": "dist-browser/index.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
