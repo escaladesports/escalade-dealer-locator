@@ -35,7 +35,7 @@ import DealerLocator from 'escalade-dealer-locator'
 <div data-esca-dealers></div>
 
 <!-- Before your closing </body> tag -->
-<script src='https://escalade-dealer-locator.netlify.com/index.js' async></script>
+<script src='https://escalade-dealer-locator-v1.netlify.com/index.js' async></script>
 <script>
 	new EscaDealerLocator({
 		brand: 'goalrilla'
