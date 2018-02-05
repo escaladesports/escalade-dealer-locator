@@ -15,7 +15,7 @@
     "build:main": "esca-scripts build --input './src/index.js' --output './dist/index.js' --react --component --minify false",
     "build:browser": "esca-scripts build --input './src/inject.js' --output './dist-browser/index.js' --react --browser --component --name EscaDealerLocator",
     "dev": "esca-scripts dev ---input './dev/script.js, ./dev/index.html' --browser --react",
-    "netlify": "opn https://app.netlify.com/sites/escalade-dealer-locator/deploys",
+    "netlify": "opn https://app.netlify.com/sites/escalade-dealer-locator-v1/deploys",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
