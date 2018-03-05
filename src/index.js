@@ -24,6 +24,12 @@ export default class extends React.Component {
 			message: <Loading />,
 		})
 		console.log(`Fetching data for zip ${zip} within ${distance}...`)
+		if('ga' in window){
+			window.ga('send', 'event', {
+				eventCategory: 'Dealer Locator',
+				eventAction: 'submit'
+			})
+		}
 		let data = await fetch({
 			brand: this.props.brand,
 			zip: zip,
@@ -49,6 +55,12 @@ export default class extends React.Component {
 		}
 	}
 	componentDidMount(){
+		if('ga' in window){
+			window.ga('send', 'event', {
+				eventCategory: 'Dealer Locator',
+				eventAction: 'load'
+			})
+		}
 		if(this.props.zip){
 			this.getDealers(this.props.zip, this.props.distance || 30)
 		}
