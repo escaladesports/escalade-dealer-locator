@@ -16,6 +16,7 @@
     "build:browser": "esca-scripts build --input './src/inject.js' --output './dist-browser/index.js' --react --browser --component --name EscaDealerLocator",
     "dev": "esca-scripts dev ---input './dev/script.js, ./dev/index.html' --browser --react",
     "netlify": "opn https://app.netlify.com/sites/escalade-dealer-locator-v1/deploys",
+	 "test": "echo 'no test'",
     "travis": "opn https://travis-ci.org/escaladesports/escalade-dealer-locator/branches",
     "prepublishOnly": "npm run build"
   },
