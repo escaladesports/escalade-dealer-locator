@@ -35,6 +35,17 @@ export default class extends React.Component {
 		})
 		this.onChange()
 	}
+	componentDidMount(){
+		console.log('MOUNT', this.props)
+		if(this.props.zip){
+			this.zipEl.value = this.props.zip
+		}
+		if(this.props.miles){
+			this.setState({
+				miles: this.props.miles
+			})
+		}
+	}
 	render(){
 		return (
 			<div className='escaDealersInput'>

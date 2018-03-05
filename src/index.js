@@ -35,13 +35,22 @@ export default class extends React.Component {
 			this.setState({
 				dealers: data.results,
 				message: false,
+				zip,
+				distance,
 			})
 		}
 		else{
 			this.setState({
 				dealers: [],
 				message: 'No dealers found',
+				zip,
+				distance,
 			})
+		}
+	}
+	componentDidMount(){
+		if(this.props.zip){
+			this.getDealers(this.props.zip, this.props.distance || 30)
 		}
 	}
 	render(){
@@ -51,7 +60,7 @@ export default class extends React.Component {
 				{this.state.message &&
 					<Message>{this.state.message}</Message>
 				}
-				<Input onChange={this.getDealers} />
+				<Input onChange={this.getDealers} zip={this.props.zip} miles={this.props.miles} />
 				<style jsx global>{`
 					.escaDealers{
 						font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
