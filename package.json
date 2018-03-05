@@ -1,6 +1,6 @@
 {
   "name": "escalade-dealer-locator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/index.js",
   "browser": "dist-browser/index.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
@@ -16,7 +16,7 @@
     "build:browser": "esca-scripts build --input './src/inject.js' --output './dist-browser/index.js' --react --browser --component --name EscaDealerLocator",
     "dev": "esca-scripts dev ---input './dev/script.js, ./dev/index.html' --browser --react",
     "netlify": "opn https://app.netlify.com/sites/escalade-dealer-locator-v1/deploys",
-	 "travis": "opn https://travis-ci.org/escaladesports/escalade-dealer-locator/branches",
+    "travis": "opn https://travis-ci.org/escaladesports/escalade-dealer-locator/branches",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
