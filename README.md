@@ -25,7 +25,7 @@ import DealerLocator from 'escalade-dealer-locator'
 
 ...
 
-<DealerLocator />
+<DealerLocator brand='goalrilla' />
 ```
 
 ## With Anything Else
