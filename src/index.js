@@ -81,6 +81,53 @@ export default class extends React.Component {
 						width: 100%;
 						user-select: none;
 					}
+
+
+
+					/* INPUT */
+					.escaDealersInput{
+						text-transform: uppercase;
+						color: #fff;
+						font-size: .8em;
+						display: inline-block;
+						position: absolute;
+						left: 0;
+						top: 0;
+						background-color: rgba(0, 0, 0, .3);
+						padding: 10px 15px;
+					}
+					.escaDealersInputDistance, .escaDealersInputZip{
+						background: transparent;
+						outline: 0;
+						border: 0;
+						color: #fff;
+						text-align: center;
+						display: inline-block;
+						font-size: 1em;
+						border-bottom: 1px solid #fff;
+						margin: 0 10px;
+					}
+					.escaDealersInputDistance{
+						width: 35px;
+					}
+					.escaDealersInputZip{
+						width: 80px;
+						margin-right: 0;
+
+						&::-webkit-input-placeholder{
+							color: #ccc;
+						}
+						&::-moz-placeholder {
+							color: #ccc;
+						}
+						&:-ms-input-placeholder {
+							color: #ccc;
+						}
+						&:-moz-placeholder {
+							color: #ccc;
+						}
+					}
+
 				`}</style>
 			</div>
 		)
