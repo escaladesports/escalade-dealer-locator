@@ -44,6 +44,7 @@ export default class extends React.Component {
 					}
 				</div>
 				<div className='escaDealerMarkerInfoX' onClick={this.closeInfo}></div>
+				{/*
 				<style jsx>{`
 					.escaDealerMarkerInfo{
 						display: none;
@@ -109,6 +110,7 @@ export default class extends React.Component {
 						display: block;
 					}
 				`}</style>
+				*/}
 			</div>
 		)
 	}
