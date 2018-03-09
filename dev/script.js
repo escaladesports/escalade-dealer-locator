@@ -1,4 +1,4 @@
-import EscaDealerLocator from '../src/inject'
+import EscaDealerLocator from '../dist/inject'
 
 const locator = new EscaDealerLocator({
 	brand: 'goalrilla'

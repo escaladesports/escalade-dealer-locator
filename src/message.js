@@ -7,7 +7,6 @@ export default class extends React.Component {
 				<div className='escaDealersMessageInner'>
 					{this.props.children}
 				</div>
-				{/*
 				<style jsx>{`
 					.escaDealersMessage{
 						position: absolute;
@@ -25,7 +24,6 @@ export default class extends React.Component {
 						transform: translate(-50%, -50%);
 					}
 				`}</style>
-				*/}
 			</div>
 		)
 	}
